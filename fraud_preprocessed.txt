@@ -1,0 +1,58 @@
+# 1 "src/core/fraud.c"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "src/core/fraud.c"
+# 1 "include/fraud.h" 1
+
+
+
+
+# 1 "include/transaction.h" 1
+
+
+
+
+typedef struct Transaction
+{
+    unsigned long long transaction_id;
+    unsigned long long account_id;
+    unsigned long long device_id;
+    unsigned long long merchant_id;
+
+    double amount;
+
+    char timestamp[32];
+
+    int is_fraud;
+    int risk_score;
+
+} Transaction;
+
+void display_transaction(Transaction t);
+# 6 "include/fraud.h" 2
+
+int calculate_risk_score(Transaction *t);
+
+void evaluate_fraud(Transaction *t);
+# 2 "src/core/fraud.c" 2
+
+int calculate_risk_score(Transaction *t)
+{
+    int score = 0;
+
+    if (t->amount >= 100000)
+        score += 40;
+
+    else if (t->amount >= 50000)
+        score += 25;
+
+    else if (t->amount >= 20000)
+        score += 10;
+
+    return score;
+}
+
+void evaluate_fraud(Transaction *t)
+{
+    t->risk_score = calculate_risk_score(t);
+}
