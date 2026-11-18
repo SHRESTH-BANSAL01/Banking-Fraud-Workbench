@@ -131,3 +131,27 @@ The project follows a modular architecture:
 
 This project demonstrates the implementation, analysis, and comparison of algorithms covered in a Design and Analysis of Algorithms course.
 
+
+## Conclusion
+
+The Banking Fraud Investigation System demonstrates the
+practical application of Design and Analysis of Algorithms
+in a banking fraud investigation scenario.
+
+The project integrates sorting, searching, greedy algorithms,
+dynamic programming, graph algorithms, backtracking,
+branch and bound, and string matching.
+
+It also includes:
+
+- Rule-based fraud detection and risk scoring
+- Automated algorithm testing
+- Performance benchmarking and complexity analysis
+- Dataset scalability and fraud evaluation
+- A web dashboard using HTML, CSS, JavaScript, and Flask
+- Integration with the C programming backend
+
+The project uses synthetic transaction datasets for
+academic experimentation. Its fraud detection results
+demonstrate the strengths and limitations of simple
+amount-based rules rather than production-level accuracy.
