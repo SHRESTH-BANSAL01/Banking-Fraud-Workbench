@@ -6,6 +6,7 @@
 #include <errno.h>
 #include <limits.h>
 #include <math.h>
+#include <stdint.h>
 
 #include "dataset.h"
 
@@ -115,6 +116,8 @@ int load_dataset(const char *filename, Dataset *dataset)
     dataset->items = NULL;
     dataset->count = 0;
 
+    size_t capacity = 0;
+
     FILE *file = fopen(filename, "r");
 
     if (file == NULL)
@@ -221,27 +224,68 @@ int load_dataset(const char *filename, Dataset *dataset)
         // Initialize risk score
         t.risk_score = 0;
 
-        // Allocate memory
-        Transaction *temp = realloc(
-            dataset->items,
-            (dataset->count + 1) * sizeof(Transaction)
-        );
+        
+/* Allocate more memory only when capacity is full */
+if (dataset->count == capacity)
+{
+    size_t new_capacity;
 
-        if (temp == NULL)
+    if (capacity == 0)
+    {
+        new_capacity = 8;
+    }
+    else
+    {
+        /* Prevent integer overflow */
+        if (capacity > SIZE_MAX / 2)
         {
-            printf("Error: Memory allocation failed.\n");
+            printf("Error: Dataset capacity overflow.\n");
 
             free(dataset->items);
-
             dataset->items = NULL;
             dataset->count = 0;
 
             fclose(file);
-
             return 0;
         }
 
-        dataset->items = temp;
+        new_capacity = capacity * 2;
+    }
+
+    /* Check allocation size */
+    if (new_capacity > SIZE_MAX / sizeof(Transaction))
+    {
+        printf("Error: Dataset is too large.\n");
+
+        free(dataset->items);
+        dataset->items = NULL;
+        dataset->count = 0;
+
+        fclose(file);
+        return 0;
+    }
+
+    Transaction *temp = realloc(
+        dataset->items,
+        new_capacity * sizeof(Transaction)
+    );
+
+    if (temp == NULL)
+    {
+        printf("Error: Memory allocation failed.\n");
+
+        free(dataset->items);
+        dataset->items = NULL;
+        dataset->count = 0;
+
+        fclose(file);
+        return 0;
+    }
+
+    dataset->items = temp;
+    capacity = new_capacity;
+}
+
 
         // Store transaction
         dataset->items[dataset->count] = t;
