@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FraudGuard | Banking Fraud Workbench</title>
+  <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+<div class="app-shell">
+
+  <header class="navbar">
+    <a class="brand" href="#">
+      <span class="brand-symbol">◆</span> FraudGuard
+    </a>
+
+    <nav class="top-links">
+      <a href="#dashboard">Dashboard</a>
+      <a href="#analysis">Fraud Analysis</a>
+      <a href="#algorithms">Algorithms</a>
+      <a href="#reports">Reports</a>
+    </nav>
+
+    <div class="nav-right">
+      <span class="live-dot"></span>
+      <span>Local Workbench</span>
+      <span class="avatar">FG</span>
+    </div>
+  </header>
+
+  <div class="workspace">
+    <main class="main-content">
+
+      <div class="page-heading">
+        <div>
+          <div class="eyebrow">BANKING SECURITY / ANALYTICS</div>
+          <h1>Fraud Detection <span class="heading-arrow">⌄</span></h1>
+          <p>Transaction monitoring, risk evaluation and algorithm analysis</p>
+        </div>
+        <span class="project-tag">DAA PROJECT</span>
+      </div>
+
+      <div class="tabs">
+        <button class="tab active" data-tab="dashboard">Overview</button>
+        <button class="tab" data-tab="analysis">Fraud Analysis</button>
+        <button class="tab" data-tab="algorithms">Algorithms</button>
+        <button class="tab" data-tab="reports">Reports</button>
+      </div>
+
+      <section class="tab-page active" id="dashboard">
+
+        <div class="section-heading">
+          <h2>Performance Overview</h2>
+          <label class="dataset-select">
+            Dataset
+            <select id="dataset-select">
+              <option value="Large">Large — 50,000</option>
+              <option value="Medium">Medium — 5,000</option>
+              <option value="Shock">Shock — 5,000</option>
+              <option value="Adversarial">Adversarial — 1,000</option>
+              <option value="Small">Small — 10</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card">
+            <div class="stat-top"><span>Transactions Reviewed</span><span class="stat-icon">▤</span></div>
+            <strong id="stat-transactions">—</strong>
+            <small>Successfully loaded records</small>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span>Actual Fraud Cases</span><span class="stat-icon">◇</span></div>
+            <strong id="stat-fraud">—</strong>
+            <small>Ground-truth labels</small>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span>Detection Accuracy</span><span class="stat-icon">◎</span></div>
+            <strong id="stat-accuracy">—</strong>
+            <small>Correct classifications</small>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span>F1-Score</span><span class="stat-icon">↗</span></div>
+            <strong id="stat-f1">—</strong>
+            <small>Precision and recall balance</small>
+          </article>
+        </div>
+
+        <div class="chart-grid">
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <h3>Accuracy by Dataset</h3>
+                <p>Fraud detection performance comparison</p>
+              </div>
+              <span class="panel-menu">•••</span>
+            </div>
+            <div id="accuracy-chart" class="bar-chart"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <h3>Classification Metrics</h3>
+                <p>Selected dataset performance</p>
+              </div>
+              <span class="panel-menu">•••</span>
+            </div>
+            <div id="metrics-chart" class="bar-chart"></div>
+          </article>
+        </div>
+
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <h3>Confusion Matrix</h3>
+              <p>Classification counts for the selected dataset</p>
+            </div>
+          </div>
+          <div class="confusion-grid">
+            <div class="confusion-cell good">
+              <span>True Positive</span><strong id="cm-tp">—</strong>
+            </div>
+            <div class="confusion-cell good">
+              <span>True Negative</span><strong id="cm-tn">—</strong>
+            </div>
+            <div class="confusion-cell warning">
+              <span>False Positive</span><strong id="cm-fp">—</strong>
+            </div>
+            <div class="confusion-cell warning">
+              <span>False Negative</span><strong id="cm-fn">—</strong>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <section class="tab-page" id="analysis">
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <h3>Fraud Analysis</h3>
+              <p>Rule-based risk detection using a threshold of 25</p>
+            </div>
+          </div>
+          <p class="description">
+            Transactions receive a risk score based on their amount.
+            A score of 25 or above is classified as suspicious.
+          </p>
+          <div class="rules">
+            <div><span>Amount below ₹20,000</span><b>Risk 0</b></div>
+            <div><span>₹20,000 – ₹49,999.99</span><b>Risk 10</b></div>
+            <div><span>₹50,000 – ₹99,999.99</span><b>Risk 25</b></div>
+            <div><span>₹100,000 and above</span><b>Risk 40</b></div>
+          </div>
+          <button class="primary-button" data-command="evaluate">
+            Run Fraud Evaluation
+          </button>
+        </article>
+      </section>
+
+      <section class="tab-page" id="algorithms">
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <h3>Algorithm Workbench</h3>
+              <p>Execute and analyze your C algorithm modules</p>
+            </div>
+          </div>
+          <div class="algorithm-grid">
+            <button class="algorithm-card" data-command="test">
+              <span class="algorithm-icon">✓</span>
+              <strong>Automated Tests</strong>
+              <small>Validate algorithm correctness</small>
+            </button>
+            <button class="algorithm-card" data-command="benchmark">
+              <span class="algorithm-icon">▥</span>
+              <strong>Sorting Benchmark</strong>
+              <small>Merge Sort vs Quick Sort</small>
+            </button>
+            <button class="algorithm-card" data-command="stress">
+              <span class="algorithm-icon">↗</span>
+              <strong>Stress Testing</strong>
+              <small>Evaluate performance under load</small>
+            </button>
+            <button class="algorithm-card" data-command="compare">
+              <span class="algorithm-icon">⇄</span>
+              <strong>Algorithm Comparison</strong>
+              <small>Compare algorithm approaches</small>
+            </button>
+            <button class="algorithm-card" data-command="complexity">
+              <span class="algorithm-icon">∑</span>
+              <strong>Complexity Report</strong>
+              <small>Analyze time complexity</small>
+            </button>
+            <button class="algorithm-card" data-command="scalability">
+              <span class="algorithm-icon">▤</span>
+              <strong>Scalability Testing</strong>
+              <small>Benchmark dataset loading</small>
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <section class="tab-page" id="reports">
+        <article class="panel">
+          <h3>Generated Reports</h3>
+          <p class="description">Reports produced by your C application.</p>
+          <div class="rules">
+            <div><span>Fraud Evaluation</span><code>fraud_evaluation.csv</code></div>
+            <div><span>Sorting Benchmark</span><code>sorting_benchmark.csv</code></div>
+            <div><span>Stress Testing</span><code>stress_test_report.csv</code></div>
+            <div><span>Algorithm Comparison</span><code>algorithm_comparison.csv</code></div>
+            <div><span>Dataset Scalability</span><code>dataset_scalability.csv</code></div>
+          </div>
+          <p class="description">Report viewing and downloads will be enabled with the backend.</p>
+        </article>
+      </section>
+
+      <article class="panel console-panel">
+        <div class="panel-heading">
+          <div>
+            <h3>Execution Console</h3>
+            <p>Command output from the C workbench</p>
+          </div>
+          <span id="backend-status" class="status-label">PREVIEW MODE</span>
+        </div>
+        <pre id="console-output">FraudGuard Analytics initialized.
+Frontend preview is ready.
+C executable connection pending.</pre>
+      </article>
+
+    </main>
+
+    <aside class="right-sidebar">
+      <h3>Workspace</h3>
+      <button class="side-link active" data-target="dashboard">Dashboard</button>
+      <button class="side-link" data-target="analysis">Fraud Analysis</button>
+      <button class="side-link" data-target="algorithms">Algorithms</button>
+      <button class="side-link" data-target="reports">Reports</button>
+
+      <div class="side-divider"></div>
+
+      <h3>Detection Insights</h3>
+      <div class="insight">
+        <span class="insight-dot green"></span>
+        <div>
+          <strong>Amount-based Detection</strong>
+          <p>Current rule threshold: 25</p>
+        </div>
+      </div>
+      <div class="insight">
+        <span class="insight-dot orange"></span>
+        <div>
+          <strong>Shock Dataset</strong>
+          <p>Accuracy: 50.56%</p>
+        </div>
+      </div>
+      <div class="insight">
+        <span class="insight-dot orange"></span>
+        <div>
+          <strong>Adversarial Dataset</strong>
+          <p>Recall: 36.09%</p>
+        </div>
+      </div>
+
+      <div class="side-divider"></div>
+
+      <h3>Project Modules</h3>
+      <div class="module-list">
+        <span>Sorting & Searching</span>
+        <span>Greedy Algorithms</span>
+        <span>Dynamic Programming</span>
+        <span>Graph Algorithms</span>
+        <span>Backtracking</span>
+        <span>Branch and Bound</span>
+      </div>
+
+      <div class="side-note">
+        <strong>Academic Workbench</strong>
+        <p>DAA algorithms implemented in C. Dashboard built with web technologies.</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script src="../static/js/script.js"></script>
+</body>
+</html>
