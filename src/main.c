@@ -28,6 +28,8 @@
 #include "stress_test.h"
 #include "comparison.h"
 #include "complexity_report.h"
+#include "scalability.h"
+#include "fraud_evaluation.h"
 
 
 
@@ -81,6 +83,20 @@ if (argc > 1 && strcmp(argv[1], "--complexity") == 0)
 {
     return generate_complexity_report(
         "reports/complexity_report.csv"
+    );
+}
+
+if (argc > 1 && strcmp(argv[1], "--scalability") == 0)
+{
+    return run_dataset_scalability(
+        "reports/dataset_scalability.csv"
+    );
+}
+
+if (argc > 1 && strcmp(argv[1], "--evaluate") == 0)
+{
+    return run_fraud_evaluation(
+        "reports/fraud_evaluation.csv"
     );
 }
 
