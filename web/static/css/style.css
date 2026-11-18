@@ -540,3 +540,115 @@ h1 {
   h1 { font-size: 25px; }
   .section-heading { flex-wrap: wrap; }
 }
+
+
+/* Step 32: Transaction Explorer */
+
+.explorer-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.explorer-controls input,
+.explorer-controls select {
+  background: #1b2530;
+  color: #f0f3f7;
+  border: 1px solid #34404d;
+  border-radius: 8px;
+  padding: 12px;
+  min-width: 145px;
+}
+
+.explorer-controls input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.transaction-table th {
+  text-align: left;
+  color: #9ca7b6;
+  padding: 14px;
+  border-bottom: 1px solid #34404d;
+}
+
+.transaction-table td {
+  padding: 14px;
+  border-bottom: 1px solid #26313d;
+}
+
+.transaction-table tr:hover {
+  background: #1b2530;
+}
+
+.risk-badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 7px;
+  font-weight: 600;
+  font-size: 11px;
+}
+
+.risk-badge.suspicious {
+  background: #4a3021;
+  color: #ffb36a;
+}
+
+.risk-badge.normal {
+  background: #263c1e;
+  color: #a5ef45;
+}
+
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.report-card {
+  background: #1b2530;
+  border: 1px solid #34404d;
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-wrap: anywhere;
+}
+
+.report-card strong {
+  font-size: 13px;
+}
+
+.report-card small {
+  color: #9ca7b6;
+}
+
+.report-card a {
+  color: #a5ef45;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.report-card a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .report-grid {
+    grid-template-columns: 1fr;
+  }
+}

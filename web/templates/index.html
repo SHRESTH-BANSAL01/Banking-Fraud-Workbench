@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FraudGuard | Banking Fraud Workbench</title>
-  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 <div class="app-shell">
@@ -137,6 +137,64 @@
       </section>
 
       <section class="tab-page" id="analysis">
+
+
+<article class="panel">
+  <div class="panel-heading">
+    <div>
+      <h3>Transaction Explorer</h3>
+      <p>Search and investigate transaction records</p>
+    </div>
+  </div>
+
+  <div class="explorer-controls">
+    <select id="transaction-dataset">
+      <option value="small">Small</option>
+      <option value="medium">Medium</option>
+      <option value="shock">Shock</option>
+      <option value="large">Large</option>
+      <option value="adversarial">Adversarial</option>
+    </select>
+
+    <input
+      type="search"
+      id="transaction-search"
+      placeholder="Search transaction or account ID"
+    >
+
+    <select id="transaction-filter">
+      <option value="all">All Transactions</option>
+      <option value="suspicious">Suspicious</option>
+      <option value="normal">Normal</option>
+    </select>
+
+    <button class="primary-button" id="search-transactions">
+      Search
+    </button>
+  </div>
+
+  <div class="table-container">
+    <table class="transaction-table">
+      <thead>
+        <tr>
+          <th>Transaction ID</th>
+          <th>Account ID</th>
+          <th>Amount</th>
+          <th>Risk Score</th>
+          <th>Detection</th>
+        </tr>
+      </thead>
+      <tbody id="transaction-results">
+        <tr>
+          <td colspan="5">Click Search to load transactions.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p id="transaction-summary" class="description"></p>
+</article>
+
         <article class="panel">
           <div class="panel-heading">
             <div>
@@ -203,20 +261,25 @@
         </article>
       </section>
 
-      <section class="tab-page" id="reports">
-        <article class="panel">
-          <h3>Generated Reports</h3>
-          <p class="description">Reports produced by your C application.</p>
-          <div class="rules">
-            <div><span>Fraud Evaluation</span><code>fraud_evaluation.csv</code></div>
-            <div><span>Sorting Benchmark</span><code>sorting_benchmark.csv</code></div>
-            <div><span>Stress Testing</span><code>stress_test_report.csv</code></div>
-            <div><span>Algorithm Comparison</span><code>algorithm_comparison.csv</code></div>
-            <div><span>Dataset Scalability</span><code>dataset_scalability.csv</code></div>
-          </div>
-          <p class="description">Report viewing and downloads will be enabled with the backend.</p>
-        </article>
-      </section>
+      
+<section class="tab-page" id="reports">
+  <article class="panel">
+    <div class="panel-heading">
+      <div>
+        <h3>Generated Reports</h3>
+        <p>Download performance and fraud evaluation results</p>
+      </div>
+      <button class="primary-button" id="refresh-reports">
+        Refresh
+      </button>
+    </div>
+
+    <div id="report-downloads" class="report-grid">
+      <p class="description">Loading available reports...</p>
+    </div>
+  </article>
+</section>
+
 
       <article class="panel console-panel">
         <div class="panel-heading">
@@ -285,6 +348,6 @@ C executable connection pending.</pre>
   </div>
 </div>
 
-<script src="../static/js/script.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
