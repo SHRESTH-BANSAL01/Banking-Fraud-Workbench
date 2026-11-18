@@ -381,3 +381,20 @@ async function initialize() {
 }
 
 initialize();
+
+
+const refreshButton =
+  document.getElementById("refresh-dashboard");
+
+refreshButton.addEventListener("click", async () => {
+  refreshButton.disabled = true;
+  refreshButton.textContent = "Refreshing...";
+
+  try {
+    await loadEvaluation();
+    await loadReports();
+  } finally {
+    refreshButton.disabled = false;
+    refreshButton.textContent = "↻ Refresh Analytics";
+  }
+});

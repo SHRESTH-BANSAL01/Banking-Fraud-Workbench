@@ -652,3 +652,41 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Dashboard polish */
+
+.refresh-button {
+  background: #263c1e;
+  color: #a5ef45;
+  border: 1px solid #466a32;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.refresh-button:hover {
+  background: #35552a;
+}
+
+.refresh-button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 2px solid #a5ef45;
+  outline-offset: 3px;
+}
+
+.algorithm-card:disabled,
+.primary-button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+

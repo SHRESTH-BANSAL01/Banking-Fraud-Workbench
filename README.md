@@ -130,3 +130,4 @@ The project follows a modular architecture:
 ## Academic Purpose
 
 This project demonstrates the implementation, analysis, and comparison of algorithms covered in a Design and Analysis of Algorithms course.
+
