@@ -1,0 +1,23 @@
+﻿       SORTING AND SEARCHING MODULE
+============================================
+
+Running Merge Sort...
+Merge Sort: PASSED
+
+Running Quick Sort...
+Quick Sort: PASSED
+
+Running Binary Search...
+Transaction Found!
+Transaction ID: 1001
+Array Index: 0
+
+All sorting and searching tests completed.
+
+============================================
+       SORTING PERFORMANCE ANALYSIS
+============================================
+Total Transactions : 10
+Merge Sort Time    : 0.000000 seconds
+Quick Sort Time    : 0.000000 seconds
+

@@ -1,0 +1,18 @@
+﻿
+============================================
+          AUTOMATED ALGORITHM TESTS
+============================================
+[PASS] Merge Sort
+[PASS] Quick Sort
+[PASS] Binary Search
+[PASS] Sorting Consistency
+[PASS] Empty Dataset
+[PASS] Single Transaction
+
+============================================
+              TEST SUMMARY
+============================================
+Total Tests : 6
+Passed      : 6
+Failed      : 0
+============================================

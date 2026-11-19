@@ -1,0 +1,23 @@
+﻿        0/1 KNAPSACK - FRAUD ANALYSIS
+============================================
+Investigation Budget: 8
+Maximum Priority Value: 110
+
+Selected Investigations:
+Transaction 1010 | Cost: 1 | Value: 20
+Transaction 1006 | Cost: 4 | Value: 50
+Transaction 1004 | Cost: 3 | Value: 40
+
+Total Investigation Cost: 8
+Remaining Budget: 0
+============================================
+
+============================================
+       BRANCH AND BOUND - KNAPSACK
+============================================
+Investigation Budget: 8
+Maximum Priority Value: 110
+
+Selected Investigations:
+Transaction 1010 | Cost: 1 | Value: 20
+Transaction 1003 | Cost: 2 | Value: 30

@@ -1,0 +1,377 @@
+﻿
+============================================
+       BANKING FRAUD INVESTIGATION SYSTEM
+============================================
+
+Loading transaction dataset...
+Warning: Invalid data at line 2.
+
+========== DATASET REPORT ==========
+Valid Transactions : 10
+Invalid Rows       : 1
+====================================
+
+Dataset loaded successfully!
+Total Transactions: 10
+
+============================================
+       SORTING AND SEARCHING MODULE
+============================================
+
+Running Merge Sort...
+Merge Sort: PASSED
+
+Running Quick Sort...
+Quick Sort: PASSED
+
+Running Binary Search...
+Transaction Found!
+Transaction ID: 1001
+Array Index: 0
+
+All sorting and searching tests completed.
+
+============================================
+       SORTING PERFORMANCE ANALYSIS
+============================================
+Total Transactions : 10
+Merge Sort Time    : 0.000000 seconds
+Quick Sort Time    : 0.000000 seconds
+
+Theoretical Time Complexity:
+Merge Sort : O(n log n)
+Quick Sort : O(n log n) average
+Quick Sort : O(n^2) worst case
+============================================
+
+============================================
+             FRAUD DETECTION
+============================================
+
+[SUSPICIOUS TRANSACTION]
+
+------------------------------
+Transaction ID : 1003
+Account ID     : 5003
+Device ID      : 103
+Merchant ID    : 203
+Amount         : 75000.00
+Timestamp      : 2026-11-01T10:00:00
+Fraud Label    : 1
+Risk Score     : 25
+------------------------------
+
+[SUSPICIOUS TRANSACTION]
+
+------------------------------
+Transaction ID : 1004
+Account ID     : 5004
+Device ID      : 104
+Merchant ID    : 204
+Amount         : 120000.00
+Timestamp      : 2026-11-01T11:30:00
+Fraud Label    : 1
+Risk Score     : 40
+------------------------------
+
+[SUSPICIOUS TRANSACTION]
+
+------------------------------
+Transaction ID : 1006
+Account ID     : 5005
+Device ID      : 105
+Merchant ID    : 205
+Amount         : 55000.00
+Timestamp      : 2026-11-01T12:30:00
+Fraud Label    : 0
+Risk Score     : 25
+------------------------------
+
+[SUSPICIOUS TRANSACTION]
+
+------------------------------
+Transaction ID : 1008
+Account ID     : 5007
+Device ID      : 107
+Merchant ID    : 207
+Amount         : 150000.00
+Timestamp      : 2026-11-01T14:00:00
+Fraud Label    : 1
+Risk Score     : 40
+------------------------------
+
+[SUSPICIOUS TRANSACTION]
+
+------------------------------
+Transaction ID : 1010
+Account ID     : 5009
+Device ID      : 109
+Merchant ID    : 209
+Amount         : 65000.00
+Timestamp      : 2026-11-01T16:00:00
+Fraud Label    : 1
+Risk Score     : 25
+------------------------------
+
+============================================
+          INVESTIGATION SUMMARY
+============================================
+Total Transactions : 10
+Suspicious Records : 5
+Normal Records     : 5
+Suspicious Rate    : 50.00%
+============================================
+
+Investigation completed successfully!
+
+============================================
+       GREEDY INVESTIGATION SCHEDULING
+============================================
+Selected Transaction: 1003
+Selected Transaction: 1006
+Selected Transaction: 1008
+
+Total Investigations Selected: 3
+============================================
+
+============================================
+           HUFFMAN CODING MODULE
+============================================
+Original Text: FRAUD DETECTION SYSTEM
+
+Character: S | Code: 000
+Character: D | Code: 001
+Character: M | Code: 0100
+Character: N | Code: 0101
+Character: U | Code: 0110
+Character: I | Code: 0111
+Character: E | Code: 100
+Character: T | Code: 101
+Character: [space] | Code: 1100
+Character: A | Code: 11010
+Character: C | Code: 11011
+Character: O | Code: 11100
+Character: R | Code: 11101
+Character: Y | Code: 11110
+Character: F | Code: 11111
+============================================
+
+============================================
+         DIJKSTRA SHORTEST PATH
+============================================
+Source Account: 1
+
+Account 1 -> Account 1 : Cost = 0 | Path: 1
+Account 1 -> Account 2 : Cost = 3 | Path: 1 -> 3 -> 2
+Account 1 -> Account 3 : Cost = 2 | Path: 1 -> 3
+Account 1 -> Account 4 : Cost = 8 | Path: 1 -> 3 -> 2 -> 4
+============================================
+
+============================================
+            PRIM'S MST ALGORITHM
+============================================
+Selected Edges:
+Account 3 -> Account 2 | Cost: 1
+Account 1 -> Account 3 | Cost: 2
+Account 2 -> Account 4 | Cost: 5
+
+Total MST Cost: 8
+============================================
+
+============================================
+           KRUSKAL'S MST ALGORITHM
+============================================
+Selected Edges:
+Account 2 -> Account 3 | Cost: 1
+Account 1 -> Account 3 | Cost: 2
+Account 2 -> Account 4 | Cost: 5
+
+Total MST Cost: 8
+============================================
+
+============================================
+        0/1 KNAPSACK - FRAUD ANALYSIS
+============================================
+Investigation Budget: 8
+Maximum Priority Value: 110
+
+Selected Investigations:
+Transaction 1010 | Cost: 1 | Value: 20
+Transaction 1006 | Cost: 4 | Value: 50
+Transaction 1004 | Cost: 3 | Value: 40
+
+Total Investigation Cost: 8
+Remaining Budget: 0
+============================================
+
+============================================
+       BRANCH AND BOUND - KNAPSACK
+============================================
+Investigation Budget: 8
+Maximum Priority Value: 110
+
+Selected Investigations:
+Transaction 1010 | Cost: 1 | Value: 20
+Transaction 1003 | Cost: 2 | Value: 30
+Transaction 1008 | Cost: 5 | Value: 60
+
+Total Investigation Cost: 8
+Remaining Budget: 0
+
+Search Statistics:
+Nodes Visited: 19
+Nodes Pruned: 3
+============================================
+
+============================================
+      LONGEST COMMON SUBSEQUENCE
+============================================
+Pattern 1: ABCDEF
+Pattern 2: ACE
+
+Longest Common Subsequence: ACE
+LCS Length: 3
+Similarity Score: 50.00%
+============================================
+
+============================================
+       MATRIX CHAIN MULTIPLICATION
+============================================
+Number of Matrices: 3
+Minimum Scalar Multiplications: 4500
+Optimal Parenthesization: ((A1 x A2) x A3)
+============================================
+
+============================================
+          N-QUEENS BACKTRACKING
+============================================
+Board Size: 4 x 4
+
+Solution 1:
+. Q . . 
+. . . Q 
+Q . . . 
+. . Q . 
+
+Solution 2:
+. . Q . 
+Q . . . 
+. . . Q 
+. Q . . 
+
+Total Solutions: 2
+============================================
+
+============================================
+        EDMONDS-KARP MAXIMUM FLOW
+============================================
+Augmenting Path: 1 -> 2 -> 4 | Flow: 7
+Augmenting Path: 1 -> 3 -> 4 | Flow: 5
+Augmenting Path: 1 -> 2 -> 3 -> 4 | Flow: 3
+
+Source Account: 1
+Sink Account: 4
+Maximum Network Flow: 15
+Augmenting Paths Found: 3
+============================================
+
+============================================
+       BIPARTITE MATCHING MODULE
+============================================
+Total Suspicious Cases : 5
+Available Investigators: 3
+
+Investigation Assignments:
+Investigator 1 -> Transaction 1004
+Investigator 2 -> Transaction 1003
+Investigator 3 -> Transaction 1006
+
+Successfully Assigned : 3
+Unassigned Cases      : 2
+============================================
+
+============================================
+        CHINESE REMAINDER THEOREM
+============================================
+Given Congruences:
+x = 2 (mod 3)
+x = 3 (mod 5)
+x = 2 (mod 7)
+
+Smallest Non-negative Solution: 23
+Solution Modulus: 105
+
+Verification:
+23 mod 3 = 2
+23 mod 5 = 3
+23 mod 7 = 2
+============================================
+
+============================================
+          KMP STRING MATCHING
+============================================
+
+Pattern: UNKNOWN DEVICE
+Pattern Found at Index: 13
+
+============================================
+         KMP FRAUD PATTERN ANALYSIS
+============================================
+Transaction ID: 1003
+Description: UNAUTHORIZED PAYMENT FROM UNKNOWN DEVICE
+
+Suspicious Keyword: UNAUTHORIZED
+Found at Index: 0
+
+Suspicious Keyword: UNKNOWN DEVICE
+Found at Index: 26
+
+Total Suspicious Keywords: 2
+Status: FLAGGED FOR REVIEW
+============================================
+
+============================================
+         KMP FRAUD PATTERN ANALYSIS
+============================================
+Transaction ID: 1006
+Description: FAILED LOGIN WITH MULTIPLE ATTEMPTS
+
+Suspicious Keyword: FAILED LOGIN
+Found at Index: 0
+
+Suspicious Keyword: MULTIPLE ATTEMPTS
+Found at Index: 18
+
+Total Suspicious Keywords: 2
+Status: FLAGGED FOR REVIEW
+============================================
+
+============================================
+         KMP FRAUD PATTERN ANALYSIS
+============================================
+Transaction ID: 1008
+Description: REGULAR PAYMENT COMPLETED SUCCESSFULLY
+
+Total Suspicious Keywords: 0
+Status: NO KEYWORD MATCHES
+============================================
+
+============================================
+          AUTOMATED ALGORITHM TESTS
+============================================
+[PASS] Merge Sort
+[PASS] Quick Sort
+[PASS] Binary Search
+[PASS] Sorting Consistency
+[PASS] Empty Dataset
+[PASS] Single Transaction
+
+============================================
+              TEST SUMMARY
+============================================
+Total Tests : 6
+Passed      : 6
+Failed      : 0
+============================================
+
+All automated tests passed!

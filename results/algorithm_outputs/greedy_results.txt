@@ -1,0 +1,23 @@
+﻿       GREEDY INVESTIGATION SCHEDULING
+============================================
+Selected Transaction: 1003
+Selected Transaction: 1006
+Selected Transaction: 1008
+
+Total Investigations Selected: 3
+============================================
+
+============================================
+           HUFFMAN CODING MODULE
+============================================
+Original Text: FRAUD DETECTION SYSTEM
+
+Character: S | Code: 000
+Character: D | Code: 001
+Character: M | Code: 0100
+Character: N | Code: 0101
+Character: U | Code: 0110
+Character: I | Code: 0111
+Character: E | Code: 100
+Character: T | Code: 101
+Character: [space] | Code: 1100
